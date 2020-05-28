@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="ESClient.Views.Main.GameDetail.Content"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ESClient.Views.Main.GameDetail"
+             mc:Ignorable="d" 
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel>
+            <WrapPanel Margin="16,0,0,0">
+                <TextBlock Text="美少女万華鏡 -理と迷宮の少女-" FontSize="28" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Text="(ωstar)" FontSize="20" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                <TextBlock Text="(2020-05-28)" FontSize="20" VerticalAlignment="Center" Margin="20,0,0,0"/>
+            </WrapPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="180"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <local:PlayButton Margin="0,0,0,0"/>
+                    <WrapPanel>
+                        <local:Link Title="ErogameScape" />
+                        <local:Link Title="誠也の部屋" />
+                        <local:Link Title="OHP" />
+                    </WrapPanel>
+                    <local:GameInfoText Label="原画: " Naiyou="八宝備仁"/>
+                    <local:GameInfoText Label="シナリオ: " Naiyou="吉祥寺ドロレス"/>
+                </StackPanel>
+                <local:Statistics Grid.Column="1"/>
+            </Grid>
+            <local:GameInfoText Label="声優: " Naiyou="杏子御津(覡 夕摩) , 篠原ゆみ(覡 夕莉)
+            ヒマリ(陽茉莉)(御殿場 鏡子) , 葵時緒(稲森 はる) , 真中海(蓮華) , 榛名れん(藤堂 咲) , 越雪光(覡 礼次郎) , このは(声優)(鈴森 いちか)"/>
+            <TextBlock Height="50" />
+        </StackPanel>
+    </Grid>
+</UserControl>

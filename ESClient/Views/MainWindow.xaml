@@ -1,0 +1,38 @@
+﻿<mah:MetroWindow x:Class="ESClient.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:navigation="clr-namespace:ESClient.Views.Navigation"
+        xmlns:main="clr-namespace:ESClient.Views.Main"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:mahApps="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        TitleCharacterCasing="Normal"
+        WindowTitleBrush="DimGray"
+        NonActiveWindowTitleBrush="DimGray"
+        Title="MainWindow" Height="700" Width="1000" MinWidth="1000">
+    <mahApps:MetroWindow.RightWindowCommands>
+        <mahApps:WindowCommands>
+            <Button Content="settings" />
+            <Button Content="acount" />
+        </mahApps:WindowCommands>
+    </mahApps:MetroWindow.RightWindowCommands>
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Button}" 
+                       BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="mahApps:ControlsHelper.ContentCharacterCasing" Value="Normal"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <navigation:Navigation Grid.Column="0" />
+        <main:Main Grid.Column="1" />
+    </Grid>
+
+</mah:MetroWindow>
