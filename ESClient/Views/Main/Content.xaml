@@ -11,11 +11,11 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <ScrollViewer>
-            <StackPanel>
-                <home:Home />
+        <StackPanel>
+            <home:Home />
+            <Grid Height="500">
                 <gameDetail:GameDetail />
-            </StackPanel>
-        </ScrollViewer>
+            </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -10,7 +10,12 @@
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="sale info" />
-    </Grid>
+    <StackPanel>
+        <TextBlock Text="キャンペーン情報" FontSize="24" Margin="16,0,0,0"/>
+        <DockPanel>
+            <local:SaleInfoItem HorizontalAlignment="Left" />
+            <local:SaleInfoItem HorizontalAlignment="Left" />
+            <local:SaleInfoItem HorizontalAlignment="Left" />
+        </DockPanel>
+    </StackPanel>
 </UserControl>
