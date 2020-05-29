@@ -17,7 +17,11 @@
                 <RowDefinition Height="125" />
                 <RowDefinition Height="55" />
             </Grid.RowDefinitions>
-            <Image Source="../../../Resources/ESClient_demo_image.jpg" Stretch="UniformToFill"  Grid.Row="0"/>
+            <Border Grid.Row="0" CornerRadius="8,8,0,0">
+                <Border.Background>
+                    <ImageBrush ImageSource="../../../Resources/ESClient_demo_image.jpg" Stretch="UniformToFill" />
+                </Border.Background>
+            </Border>
             <StackPanel Grid.Row="1">
                 <TextBlock Text="美少女万華鏡 -理と迷宮の少女-aaaaaaaaaaaaaaaaaaaa" TextTrimming="CharacterEllipsis" FontSize="16" Margin="4,4,4,0"/>
                 <TextBlock Text="キャンペーンの内容" FontSize="16" Margin="4,4,4,0"/>

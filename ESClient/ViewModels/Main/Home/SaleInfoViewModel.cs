@@ -1,4 +1,7 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
+using System.Drawing;
+using System.Windows.Media.Imaging;
 
 namespace ESClient.ViewModels.Main.Home
 {
@@ -9,6 +12,20 @@ namespace ESClient.ViewModels.Main.Home
         {
             get { return _campaign; }
             set { SetProperty(ref _campaign, value); }
+        }
+
+        private BitmapFrame _faceImage = null;
+        public BitmapFrame FaceImage
+        {
+            get { return _faceImage; }
+            set { SetProperty(ref _faceImage, value); }
+        }
+        public DelegateCommand recognizeFace { get; private set; }
+        public SaleInfoViewModel()
+        {
+            recognizeFace = new DelegateCommand(
+                () => { FaceImage = Models.Main.Home.SaleInfoItemModel.recognizeFace(); },
+                () => true);
         }
     }
 }

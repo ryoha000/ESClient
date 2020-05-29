@@ -1,5 +1,8 @@
-﻿using System;
+﻿using OpenCvSharp;
+using OpenCvSharp.Extensions;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +24,7 @@ namespace ESClient.Views.Main.Home
         public SaleInfo()
         {
             InitializeComponent();
+            this.DataContext = new ViewModels.Main.Home.SaleInfoViewModel();
         }
     }
 }
