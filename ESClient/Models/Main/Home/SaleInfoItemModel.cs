@@ -39,27 +39,27 @@ namespace ESClient.Models.Main.Home
                 using (CascadeClassifier cascade = new CascadeClassifier("../../../Resources/lbpcascade_animeface.xml"))
                 {
                     var maxSquare = 0;
-                    var maxX = 0;
-                    var maxY = 0;
-                    var maxWidth = 0;
-                    var maxHeight = 0;
+                    OpenCvSharp.Rect maxRect = new OpenCvSharp.Rect(0,0,0,0);
                     foreach (OpenCvSharp.Rect rectFace in cascade.DetectMultiScale(mat))
                     {
+                        System.Diagnostics.Debug.WriteLine(rectFace);
+                        System.Diagnostics.Debug.WriteLine(maxSquare < rectFace.Height * rectFace.Width);
+                        System.Diagnostics.Debug.WriteLine(maxRect);
                         if (maxSquare < rectFace.Height * rectFace.Width)
                         {
                             maxSquare = rectFace.Height * rectFace.Width;
-                            maxX = rectFace.X;
-                            maxY = rectFace.Y;
-                            maxHeight = rectFace.Height;
-                            maxWidth = rectFace.Width;
+                            maxRect = rectFace;
                         }
+                        Rect rect = new Rect(rectFace.X, rectFace.Y, rectFace.Width, rectFace.Height);
+                        Cv2.Rectangle(mat, rect, new OpenCvSharp.Scalar(0, 0, 255), 2);
                     }
-                    if (cascade.DetectMultiScale(newMat).Length < 1)
+                    Cv2.ImShow("face_show", mat);
+                    if (maxSquare == 0)
                     {
                         return null;
                     }
-                    var centerX = maxX + maxWidth / 2;
-                    var centerY = maxY + maxHeight / 2;
+                    var centerX = maxRect.X + maxRect.Width / 2;
+                    var centerY = maxRect.Y + maxRect.Height / 2;
                     Mat convert_mat = new Mat();
                     // 横長
                     if (ratio >= 2)
@@ -67,7 +67,7 @@ namespace ESClient.Models.Main.Home
                         // 横長すぎ
                         if (centerX > 125 && newMat.Width - centerX > 125)
                         {
-                            convert_mat = newMat.Clone(new Rect(centerX - 125, 0, centerX + 125, 125));
+                            convert_mat = newMat.Clone(new Rect(centerX - 125, 0, 250, 125));
                         }
                         else if (centerX < 125)
                         {
@@ -83,7 +83,7 @@ namespace ESClient.Models.Main.Home
                     {
                         if (centerY > 63 && newMat.Width - centerY > 63)
                         {
-                            convert_mat = newMat.Clone(new Rect(0, centerY - 63, 250, centerY + 63));
+                            convert_mat = newMat.Clone(new Rect(0, centerY - 63, 250, 125));
                         }
                         else if (centerY < 63)
                         {
@@ -91,7 +91,7 @@ namespace ESClient.Models.Main.Home
                         }
                         else
                         {
-                            convert_mat = newMat.Clone(new Rect(0, newMat.Height - 125, 250, newMat.Height));
+                            convert_mat = newMat.Clone(new Rect(0, newMat.Height - 125, 250, 125));
                         }
                     }
                     Cv2.ImShow("convert_mat", convert_mat);
