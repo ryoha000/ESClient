@@ -21,6 +21,7 @@ namespace ESClient.Views.Main.Home
         public SaleInfoItem()
         {
             InitializeComponent();
+            this.DataContext = new ESClient.ViewModels.Main.Home.SaleInfoItemViewModel();
         }
     }
 }

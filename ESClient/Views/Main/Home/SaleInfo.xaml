@@ -14,8 +14,6 @@
         <TextBlock Text="キャンペーン情報" FontSize="24" Margin="16,0,0,0"/>
         <StackPanel>
             <TextBlock Text="萌えゲ―アワード2019 受賞記念セール" FontSize="20" Margin="8,0,0,0" />
-            <Button Command="{Binding recognizeFace}" Content="recognize face" />
-            <Image Source="{Binding FaceImage}" Stretch="None"/>
         </StackPanel>
         <DockPanel>
             <local:SaleInfoItem HorizontalAlignment="Left" />
