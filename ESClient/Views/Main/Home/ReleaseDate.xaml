@@ -11,6 +11,24 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="release date" />
+        <StackPanel>
+            <TextBlock Text="発売予定" FontSize="24" Margin="16,16,0,0"/>
+            <Border BorderBrush="Snow" BorderThickness="0,0,0,3" Margin="8,8,24,0">
+                <DockPanel>
+                    <TextBlock Text="2020-05-22 (5)" FontSize="20" Margin="8,0,0,0"/>
+                    <iconPacks:PackIconMaterial Kind="ChevronDown" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,16,0"/>
+                </DockPanel>
+            </Border>
+            <WrapPanel>
+                <local:GameCard Text1="text1dayo" Text2="text2dayo" />
+                <local:GameCard Text1="text1dayo" Text2="text2dayo" />
+                <local:GameCard Text1="text1dayo" Text2="text2dayo" />
+                <local:GameCard Text1="text1dayo" Text2="text2dayo" />
+                <local:GameCard Text1="text1dayo" Text2="text2dayo" />
+                <local:GameCard Text1="text1dayo" Text2="text2dayo" />
+                <local:GameCard Text1="text1dayo" Text2="text2dayo" />
+                <local:GameCard Text1="text1dayo" Text2="text2dayo" />
+            </WrapPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -17,7 +17,6 @@
     </UserControl.Resources>
     <Grid>
         <StackPanel>
-            <Button Command="{Binding ShowIcon}" Content="show icon" />
             <DockPanel>
                 <Image Source="{Binding GameIcon}" Stretch="None" />
                 <TextBlock Margin="4,0,0,0" Text="美少女万華鏡 -理と迷宮の少女-" FontSize="16" TextWrapping="Wrap"/>

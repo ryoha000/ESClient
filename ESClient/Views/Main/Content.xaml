@@ -12,8 +12,10 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel>
-            <home:Home />
-            <Grid Height="500">
+            <Grid Height="400">
+                <home:Home />
+            </Grid>
+            <Grid Height="400">
                 <gameDetail:GameDetail />
             </Grid>
         </StackPanel>

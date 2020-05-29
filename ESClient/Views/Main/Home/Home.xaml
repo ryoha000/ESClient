@@ -10,8 +10,10 @@
              x:Name="root"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <local:SaleInfo />
-        <local:ReleaseDate />
-    </StackPanel>
+    <ScrollViewer>
+        <StackPanel>
+            <local:SaleInfo />
+            <local:ReleaseDate />
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

@@ -20,13 +20,9 @@ namespace ESClient.ViewModels.Navigation
             get { return _gameIcon; }
             set { SetProperty(ref _gameIcon, value); }
         }
-
-        public DelegateCommand ShowIcon { get; private set; }
         public GamesListItemViewModel()
         {
-            ShowIcon = new DelegateCommand(
-                () => { GameIcon = Models.Navigation.GameListItemModel.ShowIcon(); },
-                () => true);
+            GameIcon = Models.Navigation.GameListItemModel.ShowIcon();
         }
     }
 }
