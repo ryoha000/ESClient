@@ -21,6 +21,7 @@ namespace ESClient.Views.Navigation
         public GameListItem()
         {
             InitializeComponent();
+            this.DataContext = new ViewModels.Navigation.GamesListItemViewModel();
         }
     }
 }

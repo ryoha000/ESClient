@@ -9,17 +9,52 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}" />
+                            <ContentPresenter 
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center" 
+                                Name="content"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DimGray"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="Red"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="32"/>
         </Grid.ColumnDefinitions>
         <Border BorderThickness="1" BorderBrush="Snow" Grid.Column="0">
-            <DockPanel>
-                <TextBlock Text="ゲーム"/>
-                <iconPacks:PackIconMaterial Kind="ArrowDown" />
+            <DockPanel Height="28">
+                <TextBlock Text="ゲーム" VerticalAlignment="Center" FontSize="16" Margin="8,0,0,0"/>
+                <Button Width="28" Height="28" Margin="143,0,0,0">
+                    <iconPacks:PackIconMaterial Kind="ChevronDown" BorderBrush="Red" Margin="0,0,0,0" VerticalAlignment="Center" Height="16" Width="16"/>
+                </Button>
             </DockPanel>
         </Border>
-        <iconPacks:PackIconMaterial Kind="Clock" Grid.Column="1" />
+        <Button Grid.Column="1" Width="32" Height="32" ToolTip="最近起動したゲーム">
+            <iconPacks:PackIconMaterial Kind="Clock" Width="16" Height="16" VerticalAlignment="Center"/>
+        </Button>
     </Grid>
 </UserControl>

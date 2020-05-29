@@ -5,8 +5,35 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ESClient.Views.Navigation"
              mc:Ignorable="d" 
+             x:Name="root"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="DockPanel">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="4,4,0,0"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
-            
+        <StackPanel>
+            <Button Command="{Binding ShowIcon}" Content="show icon" />
+            <DockPanel>
+                <Image Source="{Binding GameIcon}" Stretch="None" />
+                <TextBlock Margin="4,0,0,0" Text="美少女万華鏡 -理と迷宮の少女-" FontSize="16" TextWrapping="Wrap"/>
+            </DockPanel>
+            <DockPanel>
+                <Image Source="{Binding GameIcon}" Stretch="None" />
+                <TextBlock Text="美少女万華鏡 -理と迷宮の少女-" FontSize="16" TextWrapping="Wrap"/>
+            </DockPanel>
+            <DockPanel>
+                <Image Source="{Binding GameIcon}" Stretch="None" />
+                <TextBlock Text="美少女万華鏡 -理と迷宮の少女-" FontSize="16" TextWrapping="Wrap"/>
+            </DockPanel>
+            <DockPanel>
+                <Image Source="{Binding GameIcon}" Stretch="None" />
+                <TextBlock Text="美少女万華鏡 -理と迷宮の少女-" FontSize="16" TextWrapping="Wrap"/>
+            </DockPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -16,11 +16,13 @@
             <ColumnDefinition Width="32"/>
         </Grid.ColumnDefinitions>
         <Border BorderBrush="Snow" BorderThickness="1" Grid.Column="0">
-            <DockPanel>
-                <iconPacks:PackIconMaterial Kind="Magnify" />
-                <TextBox />
+            <DockPanel Height="28">
+                <iconPacks:PackIconMaterial Kind="Magnify" VerticalAlignment="Center" Margin="8,0,0,0"/>
+                <TextBox BorderThickness="0" />
             </DockPanel>
         </Border>
-        <iconPacks:PackIconMaterial Kind="Tune" Grid.Column="1"/>
+        <Button Grid.Column="1" BorderThickness="0" Width="32" Height="32" Background="Transparent" ToolTip="詳細検索">
+             <iconPacks:PackIconMaterial Kind="Tune" HorizontalAlignment="Center" Width="16" Height="16" VerticalAlignment="Center"/>
+        </Button>
     </Grid>
 </UserControl>
