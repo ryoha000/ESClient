@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ESClient.ViewModels.Main.Home;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,7 @@ namespace ESClient.Views.Main.Home
         public Home()
         {
             InitializeComponent();
+            this.DataContext = new HomeViewModel();
         }
     }
 }

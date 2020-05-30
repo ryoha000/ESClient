@@ -102,7 +102,6 @@ namespace ESClient.Models.Main.Home
                             convert_mat = resizedMat.Clone(new Rect(0, resizedMat.Height - height, width, height));
                         }
                     }
-                    Cv2.ImShow("test show", convert_mat);
                     // Imageに表示するため変換
                     Bitmap bmp = BitmapConverter.ToBitmap(convert_mat);
                     using (Stream st = new MemoryStream())

@@ -2,7 +2,7 @@
 
 namespace ESClient.ViewModels.Main.GameDetail
 {
-    public class GameInfo : BindableBase
+    public class GameInfoViewModel : BindableBase
     {
         private string _gameId = "Prism Application";
         public string GameId

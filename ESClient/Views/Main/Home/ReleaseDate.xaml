@@ -13,7 +13,7 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="発売予定" FontSize="24" Margin="16,16,0,0"/>
-            <Border BorderBrush="Snow" BorderThickness="0,0,0,3" Margin="8,8,24,0">
+            <Border BorderBrush="Snow" BorderThickness="0,0,0,3" Margin="8,0,24,0">
                 <DockPanel>
                     <TextBlock Text="2020-05-22 (5)" FontSize="20" Margin="8,0,0,0"/>
                     <iconPacks:PackIconMaterial Kind="ChevronDown" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,16,0"/>

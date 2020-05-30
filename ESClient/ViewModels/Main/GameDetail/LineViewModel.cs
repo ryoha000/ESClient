@@ -2,7 +2,7 @@
 
 namespace ESClient.ViewModels.Main.GameDetail
 {
-    public class Line : BindableBase
+    public class LineViewModel : BindableBase
     {
         private string _title = "Prism Application";
         public string Title

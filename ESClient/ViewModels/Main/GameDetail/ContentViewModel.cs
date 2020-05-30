@@ -2,7 +2,7 @@
 
 namespace ESClient.ViewModels.Main.GameDetail
 {
-    public class Content : BindableBase
+    public class ContentViewModel : BindableBase
     {
     }
 }

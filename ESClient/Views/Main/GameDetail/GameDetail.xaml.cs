@@ -21,6 +21,7 @@ namespace ESClient.Views.Main.GameDetail
         public GameDetail()
         {
             InitializeComponent();
+            this.DataContext = new ViewModels.Main.GameDetail.GameDetailViewModel();
         }
     }
 }

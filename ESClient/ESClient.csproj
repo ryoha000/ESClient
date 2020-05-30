@@ -13,6 +13,7 @@
     <None Remove="Resources\lbpcascade_animeface.xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AngleSharp" Version="0.14.0" />
     <PackageReference Include="MahApps.Metro" Version="2.0.0" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="4.2.0" />
     <PackageReference Include="OpenCvSharp4" Version="4.3.0.20200524" />
