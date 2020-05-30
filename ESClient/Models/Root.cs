@@ -3,11 +3,13 @@ using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Net.Http;
 using System.Security.Policy;
 using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace ESClient.Models
 {
@@ -27,7 +29,9 @@ namespace ESClient.Models
             return doc;
         }
 
-        public static List<Game> Games;
+        public static Dictionary<int, Game> Games;
+        public static Dictionary<int, BitmapImage> Images;
+        public static int GameId;
 
         public class Game
         {

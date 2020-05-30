@@ -17,7 +17,7 @@
     <Grid>
         <ScrollViewer>
             <StackPanel>
-                <Image Stretch="None" x:Name="image" Source="../../../Resources/ESClient_demo_image.jpg" />
+                <Image Stretch="None" Source="{Binding ImageValue}" />
                 <Image Stretch="None" Source="../../../Resources/ESClient_demo_image.jpg" />
                 <local:Content />
             </StackPanel>

@@ -3,17 +3,22 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace ESClient.Models.Main.GameDetail
 {
     class GameDetailModel
     {
-        public static async Task GetGameInfo(int GameId)
+        public static async Task GetGameInfo()
         {
             var game = new Models.Root.Game();
+            if (Root.Games.ContainsKey(Root.GameId))
+            {
+                return;
+            }
             try
             {
-                var doc = await Models.Root.GetHTMLDocument("/game.php?game=" + GameId.ToString());
+                var doc = await Models.Root.GetHTMLDocument("/game.php?game=" + Root.GameId.ToString());
                 // 詳細情報の取得
                 var game_title = doc.GetElementById("game_title");
                 game.Title = game_title.GetElementsByTagName("a")[0].InnerHtml;
@@ -26,9 +31,20 @@ namespace ESClient.Models.Main.GameDetail
                 game.Average = int.Parse(doc.GetElementById("average").GetElementsByTagName("td")[0].InnerHtml);
                 game.Count = int.Parse(doc.GetElementById("count").GetElementsByTagName("td")[0].InnerHtml);
                 game.ImgUri = doc.GetElementById("main_image").GetElementsByTagName("img")[0].GetAttribute("src");
+                try
+                {
+                    var uri = new Uri(game.ImgUri);
+                    Root.Images.Add(Root.GameId, new BitmapImage(uri));
+                }
+                catch (System.NullReferenceException e)
+                {
+                    System.Diagnostics.Debug.WriteLine(game.ImgUri);
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
                 game.Gengas = getCreators(doc.GetElementById("genga").GetElementsByTagName("td")[0]);
                 game.Shinarios = getCreators(doc.GetElementById("shinario").GetElementsByTagName("td")[0]);
                 game.Seiyus = getSeiyus(doc.GetElementById("seiyu").GetElementsByTagName("td")[0]);
+                
             }
             catch
             {
